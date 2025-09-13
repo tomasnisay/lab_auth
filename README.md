@@ -20,7 +20,21 @@ Tomas Nisay
 - Protected profile endpoint requiring valid token  
 
 ## Installation
-1. Initialize an Express.js project:
+1. Install dependencies:
    ```bash
    npm init -y
    npm install express mysql2 jsonwebtoken bcrypt dotenv
+2. Set up a MySQL database and users table.
+3. Configure environment variables in a .env file (DB credentials, port, JWT secret).
+
+## Usage
+   -POST /auth/signup → Register a new user
+   -POST /auth/login → Authenticate and receive JWT
+   -POST /auth/logout → End session (invalidate token on client-side)
+   -GET /profile → Access protected profile data with valid JWT
+
+## Notes
+   -Password hashing ensures user credentials are stored securely.
+   -JWT provides token-based authentication (sign, verify, expiry).
+   -Postman is used to test success and error cases for all endpoints.
+   -This project is a practical lab for understanding authentication workflows.
